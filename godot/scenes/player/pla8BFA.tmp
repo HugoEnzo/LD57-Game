@@ -1,0 +1,78 @@
+[gd_scene load_steps=8 format=3 uid="uid://c0j5m81fdhnmw"]
+
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_1lnnu"]
+[ext_resource type="Texture2D" uid="uid://cb8klv8o7vkv" path="res://assets/kenney_voxel-pack/PNG/Characters/Player male/Body.png" id="2_ecsc8"]
+[ext_resource type="Texture2D" uid="uid://bugjycgvdpcx8" path="res://assets/kenney_voxel-pack/PNG/Characters/Player male/male_arm.png" id="3_8qc2t"]
+[ext_resource type="Script" path="res://scenes/player/hands.gd" id="4_33bfc"]
+[ext_resource type="Texture2D" uid="uid://b3fic5dtn12i1" path="res://assets/kenney_voxel-pack/PNG/Characters/Player male/male_leg.png" id="4_ncb84"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a8leu"]
+size = Vector2(8.56866, 31.0389)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xsukg"]
+size = Vector2(8.83353, 8.78829)
+
+[node name="Player" type="Node2D"]
+position = Vector2(99, 29)
+script = ExtResource("1_1lnnu")
+
+[node name="Body" type="RigidBody2D" parent="."]
+position = Vector2(2, 1)
+collision_layer = 8
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Body"]
+position = Vector2(-28, 4)
+scale = Vector2(0.391026, 0.453125)
+texture = ExtResource("2_ecsc8")
+offset = Vector2(70.8889, -17.129)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Body"]
+position = Vector2(-29, -10)
+polygon = PackedVector2Array(-2, 1, 34, 1, 34, -8, 59, -8, 59, 21, -2, 21)
+
+[node name="Legs" type="RigidBody2D" parent="."]
+position = Vector2(-29, 5)
+rotation = 1.61379
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Legs"]
+position = Vector2(-0.796997, 13.7362)
+shape = SubResource("RectangleShape2D_a8leu")
+
+[node name="Sprite2D" type="Sprite2D" parent="Legs"]
+position = Vector2(-1.66893e-06, 0)
+rotation = -3.12987
+scale = Vector2(0.319442, 0.563047)
+texture = ExtResource("4_ncb84")
+offset = Vector2(2.11932, -24.2217)
+
+[node name="Hands" type="RigidBody2D" parent="."]
+position = Vector2(4, 2)
+rotation = -3.0984
+collision_layer = 8
+script = ExtResource("4_33bfc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hands"]
+position = Vector2(-28.0171, 0.210027)
+rotation = -1.6125
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_xsukg")
+
+[node name="Sprite2D" type="Sprite2D" parent="Hands"]
+position = Vector2(1.66893e-06, -1.3113e-06)
+rotation = 1.54036
+scale = Vector2(0.323566, 0.590711)
+texture = ExtResource("3_8qc2t")
+offset = Vector2(-1.21767, 28.6565)
+
+[node name="LegJoint" type="PinJoint2D" parent="."]
+position = Vector2(-28, 3)
+node_a = NodePath("../Legs")
+node_b = NodePath("../Body")
+
+[node name="HandJoint" type="PinJoint2D" parent="."]
+position = Vector2(4, 1)
+node_a = NodePath("../Hands")
+node_b = NodePath("../Body")
