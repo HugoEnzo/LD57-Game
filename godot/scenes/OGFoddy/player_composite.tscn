@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://cj70nv213edl2"]
+
+[ext_resource type="Script" path="res://scenes/OGFoddy/player_composite.gd" id="1_8qod2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xvcl0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ktss2"]
+size = Vector2(20, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ph6b8"]
+size = Vector2(5, 15)
+
+[node name="Player Composite" type="Node2D"]
+script = ExtResource("1_8qod2")
+
+[node name="Player Body" type="RigidBody2D" parent="."]
+can_sleep = false
+lock_rotation = true
+continuous_cd = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player Body"]
+shape = SubResource("CapsuleShape2D_xvcl0")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Player Body"]
+node_a = NodePath("..")
+node_b = NodePath("../../Hammer")
+
+[node name="Hammer" type="RigidBody2D" parent="."]
+can_sleep = false
+continuous_cd = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hammer"]
+position = Vector2(16, 0)
+shape = SubResource("RectangleShape2D_ktss2")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hammer"]
+position = Vector2(24, 0)
+shape = SubResource("RectangleShape2D_ph6b8")
