@@ -1,0 +1,120 @@
+[gd_scene load_steps=16 format=3 uid="uid://bvjod3cr22ubk"]
+
+[ext_resource type="Script" path="res://scenes/heartbeat_scene/heartbeat_scene/heartbeat.gd" id="1_g0uhf"]
+[ext_resource type="Texture2D" uid="uid://b1yto1b7qxixe" path="res://assets/kenney_voxel-pack/PNG/Tiles/cotton_green.png" id="2_eyxhv"]
+[ext_resource type="Texture2D" uid="uid://c8ppts2kppp6h" path="res://assets/panic/panic/thicker_blood_vessels.png" id="3_3udeq"]
+[ext_resource type="Texture2D" uid="uid://dpyi51sxonbvl" path="res://assets/panic/panic/blood_vessels.png" id="4_osafi"]
+[ext_resource type="Texture2D" uid="uid://bge6rpit1d1lx" path="res://assets/heart/heart/heart_anim_spritesheet.png" id="5_y5wuq"]
+[ext_resource type="Texture2D" uid="uid://qrmip0yrajf1" path="res://assets/heart/heart/heart_anim_1.png" id="6_gtmj2"]
+[ext_resource type="AudioStream" uid="uid://c4cps2v03ajbk" path="res://assets/heart/heart/Heartbeat.mp3" id="7_t3trd"]
+[ext_resource type="Texture2D" uid="uid://df5q8qskvis8s" path="res://assets/panic/panic/red.png" id="8_851b0"]
+[ext_resource type="Texture2D" uid="uid://b1r25bw5pdnwr" path="res://assets/panic/panic/panic_bar.png" id="9_3aqk8"]
+[ext_resource type="PackedScene" uid="uid://bm77d4m186ifc" path="res://scenes/GrappleHand/hand_grappler.tscn" id="10_2fmxs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8djou"]
+size = Vector2(383, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jupmm"]
+atlas = ExtResource("5_y5wuq")
+region = Rect2(24, 0, 24, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1mc27"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jupmm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_gtmj2")
+}],
+"loop": false,
+"name": &"heartbeat",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_gtmj2")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ykdwf"]
+texture = ExtResource("8_851b0")
+
+[sub_resource type="GDScript" id="GDScript_80l2t"]
+
+[node name="Heartbeat" type="Node2D"]
+position = Vector2(15, 308)
+script = ExtResource("1_g0uhf")
+
+[node name="TestFloor" type="StaticBody2D" parent="."]
+position = Vector2(0, 1)
+collision_layer = 7
+collision_mask = 8
+
+[node name="Sprite2D" type="Sprite2D" parent="TestFloor"]
+position = Vector2(264, -64)
+scale = Vector2(2.94531, 1)
+texture = ExtResource("2_eyxhv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TestFloor"]
+position = Vector2(266, -63)
+shape = SubResource("RectangleShape2D_8djou")
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+
+[node name="BloodVessels" type="Sprite2D" parent="."]
+position = Vector2(273, -146)
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("3_3udeq")
+
+[node name="ThickerBloodVessels" type="Sprite2D" parent="."]
+position = Vector2(273, -146)
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("4_osafi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(17.25, -23.0625)
+scale = Vector2(2.3125, 2.3125)
+sprite_frames = SubResource("SpriteFrames_1mc27")
+animation = &"heartbeat"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_t3trd")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ProgressBar" type="ProgressBar" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = -7.5325
+anchor_right = 0.525
+anchor_bottom = -2.3075
+offset_left = -0.25
+offset_top = -0.200012
+offset_right = 3.75
+offset_bottom = 26.8
+theme_override_styles/fill = SubResource("StyleBoxTexture_ykdwf")
+fill_mode = 3
+show_percentage = false
+script = SubResource("GDScript_80l2t")
+metadata/_edit_use_anchors_ = true
+
+[node name="PanicBar" type="Sprite2D" parent="."]
+position = Vector2(16, -183)
+scale = Vector2(1.75, 1.75)
+texture = ExtResource("9_3aqk8")
+
+[node name="HandGrappler" parent="." instance=ExtResource("10_2fmxs")]
+position = Vector2(192, -131)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

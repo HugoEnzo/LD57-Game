@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bm77d4m186ifc"]
+[gd_scene load_steps=4 format=3 uid="uid://bm77d4m186ifc"]
 
+[ext_resource type="Texture2D" uid="uid://cofl4fsrj5ohf" path="res://assets/character/character/character_blue.png" id="2_1murg"]
 [ext_resource type="Script" path="res://scenes/GrappleHand/grapple_controller.gd" id="2_ufc26"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s4fsh"]
@@ -26,3 +27,8 @@ target_position = Vector2(34.9841, 5.10978)
 points = PackedVector2Array(0, 0, 0, 0)
 width = 2.0
 default_color = Color(1, 0.180392, 1, 1)
+
+[node name="CharacterBlue" type="Sprite2D" parent="Player"]
+position = Vector2(9, -18)
+scale = Vector2(0.5, 1.25)
+texture = ExtResource("2_1murg")
