@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=3 uid="uid://bmlmona2a8jid"]
+
+[ext_resource type="PackedScene" uid="uid://do0w867e8jua2" path="res://scenes/Terrain_scenes/top_left_to_mid_right_with_top_hole.tscn" id="1_tabu6"]
+[ext_resource type="PackedScene" uid="uid://boq1n2wivy6tl" path="res://scenes/Terrain_scenes/mid_left_to_top_right_with_top_hole.tscn" id="2_ewxq3"]
+[ext_resource type="PackedScene" uid="uid://d2augxpfd4lve" path="res://scenes/Terrain_scenes/top_left_to_mid_right_with_bot_hole.tscn" id="3_jf2bc"]
+[ext_resource type="PackedScene" uid="uid://c746cxphja8ne" path="res://scenes/Terrain_scenes/mid_left_to_top_right.tscn" id="4_btguu"]
+[ext_resource type="PackedScene" uid="uid://bq2quxg7efxop" path="res://scenes/Terrain_scenes/mid_left_to_top_right_with_bot_hole.tscn" id="5_h3yq3"]
+[ext_resource type="PackedScene" uid="uid://b1p4fqxu8tmx6" path="res://scenes/Terrain_scenes/mid_left_to_mid_right_top_hole.tscn" id="6_53j8t"]
+[ext_resource type="PackedScene" uid="uid://dwn2erhksf3rn" path="res://scenes/Terrain_scenes/mid_left_to_mid_high_bot_hole.tscn" id="7_567a2"]
+[ext_resource type="PackedScene" uid="uid://tlkgqdq35pul" path="res://scenes/Terrain_scenes/MidLeftToMidRightStalactites.tscn" id="8_u3nec"]
+
+[node name="Terrain" type="Node2D"]
+
+[node name="top_left_to_mid_right_with_top_hole" parent="." instance=ExtResource("1_tabu6")]
+position = Vector2(436, 157)
+scale = Vector2(0.35, 0.35)
+
+[node name="MidLeftToTopRightWithTopHole2" parent="." instance=ExtResource("2_ewxq3")]
+position = Vector2(396, 1.00001)
+scale = Vector2(0.35, 0.35)
+
+[node name="top_left_to_mid_right_with_bot_hole" parent="." instance=ExtResource("3_jf2bc")]
+position = Vector2(-5.99998, 4)
+scale = Vector2(0.35, 0.35)
+
+[node name="MidLeftToTopRight" parent="." instance=ExtResource("4_btguu")]
+position = Vector2(-1.00001, 226)
+scale = Vector2(0.35, 0.35)
+
+[node name="MidLeftToTopRightWithBotHole" parent="." instance=ExtResource("5_h3yq3")]
+position = Vector2(215, 127)
+scale = Vector2(0.35, 0.35)
+
+[node name="MidLeftToMidRightTopHole" parent="." instance=ExtResource("6_53j8t")]
+position = Vector2(-2.99998, 116)
+scale = Vector2(0.35, 0.35)
+
+[node name="MidLeftToTopRightWithTopHole" parent="." instance=ExtResource("2_ewxq3")]
+position = Vector2(896, 262)
+rotation = 3.11419
+scale = Vector2(0.35, 0.35)
+
+[node name="MidLeftToMidHighBotHole" parent="." instance=ExtResource("7_567a2")]
+position = Vector2(195, 1)
+scale = Vector2(0.35, 0.35)
+
+[node name="MidLeftToMidRightStalactites" parent="." instance=ExtResource("8_u3nec")]
+position = Vector2(772, 192)
+scale = Vector2(0.35, 0.35)

@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhknqgcbviorh"]
+
+[ext_resource type="Texture2D" uid="uid://becm5en4raqvn" path="res://assets/mid_left_to_bot_right.png" id="1_dwbw6"]
+
+[node name="MidLeftToBotRight" type="StaticBody2D"]
+
+[node name="MidLeftToBotRight" type="Sprite2D" parent="."]
+position = Vector2(287.5, 162)
+scale = Vector2(3.59375, 3.57778)
+texture = ExtResource("1_dwbw6")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, 120, 575, 255, 576, 0, -1, 0)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-1, 193, -1, 321, 576, 324, 250, 294)

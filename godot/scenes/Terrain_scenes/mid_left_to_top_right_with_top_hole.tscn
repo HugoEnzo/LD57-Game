@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://boq1n2wivy6tl"]
+
+[ext_resource type="Texture2D" uid="uid://k8ssorwwd6d3" path="res://assets/Terrain/mid_left_to_top_right_with_top_hole.png" id="1_e3syj"]
+
+[node name="MidLeftToTopRightWithTopHole" type="StaticBody2D"]
+
+[node name="MidLeftToTopRightWithTopHole" type="Sprite2D" parent="."]
+position = Vector2(287, 162.5)
+scale = Vector2(3.5875, 3.61111)
+texture = ExtResource("1_e3syj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, 194, 0, 322, 575, 326, 576, 70, 406, 180, 222, 210)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(228, 0, 216, 110, 1, 126, 0, 2)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(325, -2, 298, 106, 399, 119, 573, 0)

@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://tlkgqdq35pul"]
+
+[ext_resource type="Texture2D" uid="uid://di5cgnayo15y6" path="res://assets/Terrain/mid_left_to_mid_right_stalactites.png" id="1_33bj7"]
+
+[node name="MidLeftToMidRightStalactites" type="StaticBody2D"]
+
+[node name="MidLeftToMidRightStalactites" type="Sprite2D" parent="."]
+position = Vector2(289, 161.5)
+scale = Vector2(3.6, 3.56667)
+texture = ExtResource("1_33bj7")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-1, 119, 87, 78, 104, 150, 124, 60, 184, 54, 201, 133, 226, 53, 290, 48, 304, 134, 334, 40, 381, 37, 399, 138, 428, 58, 575, 121, 575, 3, -1, -1)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(2, 192, 2, 319, 575, 324, 578, 192, 471, 260, 240, 274)

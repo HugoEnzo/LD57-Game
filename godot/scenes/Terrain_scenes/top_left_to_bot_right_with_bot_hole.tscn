@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsupud810jie1"]
+
+[ext_resource type="Texture2D" uid="uid://baad3pefu1lyl" path="res://assets/Terrain/top_left_to_bot_right_with_bot_hole.png" id="1_in4pf"]
+
+[node name="top_left_to_bot_right_with_bot_hole" type="StaticBody2D"]
+
+[node name="TopLeftToBotRightWithBotHole" type="Sprite2D" parent="."]
+position = Vector2(288.5, 162)
+scale = Vector2(3.60625, 3.57778)
+texture = ExtResource("1_in4pf")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-2, 71, -1, 324, 227, 322, 286, 194)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(328, 274, 326, 321, 575, 323, 394, 244)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-2, 0, 576, 253, 576, 0)
