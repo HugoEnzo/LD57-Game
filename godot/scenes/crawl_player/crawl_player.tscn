@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://cr16cdddcrm2f"]
+
+[ext_resource type="Script" path="res://scenes/crawl_player/crawl_player.gd" id="1_1tyku"]
+[ext_resource type="Script" path="res://scenes/crawl_player/hands.gd" id="2_xkbpl"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hkfwv"]
+radius = 7.93068
+height = 29.6587
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tqgxf"]
+size = Vector2(20, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oj2ik"]
+size = Vector2(2, 11)
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_1tyku")
+
+[node name="Body" type="RigidBody2D" parent="."]
+collision_layer = 4
+gravity_scale = 100.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body"]
+position = Vector2(-1, 0)
+rotation = 1.55202
+shape = SubResource("CapsuleShape2D_hkfwv")
+
+[node name="Hands" type="CharacterBody2D" parent="Body"]
+position = Vector2(9, -1)
+collision_layer = 8
+script = ExtResource("2_xkbpl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/Hands"]
+position = Vector2(8, 0)
+shape = SubResource("RectangleShape2D_tqgxf")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Body/Hands"]
+position = Vector2(17, -0.5)
+shape = SubResource("RectangleShape2D_oj2ik")
+
+[node name="RayCast2D" type="RayCast2D" parent="Body/Hands"]
+position = Vector2(-1, -1)
+scale = Vector2(0.12, 0.16)
+target_position = Vector2(150, 37.5)

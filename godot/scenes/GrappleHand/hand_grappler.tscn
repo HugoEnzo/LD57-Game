@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://bm77d4m186ifc"]
+
+[ext_resource type="Script" path="res://scenes/GrappleHand/grapple_controller.gd" id="2_ufc26"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s4fsh"]
+size = Vector2(20, 41.9927)
+
+[node name="HandGrappler" type="Node2D"]
+
+[node name="Player" type="RigidBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(-3, -10)
+rotation = -1.57739
+shape = SubResource("RectangleShape2D_s4fsh")
+
+[node name="GrappleController" type="Node2D" parent="Player"]
+script = ExtResource("2_ufc26")
+
+[node name="RayCast2D" type="RayCast2D" parent="Player/GrappleController"]
+position = Vector2(12, -18)
+rotation = 0.35657
+target_position = Vector2(34.9841, 5.10978)
+
+[node name="Line2D" type="Line2D" parent="Player/GrappleController"]
+points = PackedVector2Array(0, 0, 0, 0)
+width = 2.0
+default_color = Color(1, 0.180392, 1, 1)

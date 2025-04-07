@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://scenes/ingame_scene.gd" id="1_objyc"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="1_y6ebv"]
 [ext_resource type="Texture2D" uid="uid://cg423x6q5cfjd" path="res://assets/Solid_black.png" id="2_14tmn"]
+[ext_resource type="PackedScene" uid="uid://cr16cdddcrm2f" path="res://scenes/crawl_player/crawl_player.tscn" id="3_8dfmi"]
 [ext_resource type="PackedScene" uid="uid://jyv4g54adkmo" path="res://ui/overlays/pause_overlay.tscn" id="3_8o178"]
-[ext_resource type="PackedScene" uid="uid://bm77d4m186ifc" path="res://scenes/GrappleHand/hand_grappler.tscn" id="3_38lr0"]
 [ext_resource type="Texture2D" uid="uid://b1yto1b7qxixe" path="res://assets/kenney_voxel-pack/PNG/Tiles/cotton_green.png" id="3_dxof6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n33d2"]
@@ -19,12 +19,12 @@ position = Vector2(276, 159)
 scale = Vector2(3.73667, -2.79445)
 texture = ExtResource("2_14tmn")
 
-[node name="HandGrappler" parent="." instance=ExtResource("3_38lr0")]
-position = Vector2(58, 170)
+[node name="Player" parent="." instance=ExtResource("3_8dfmi")]
+position = Vector2(127, 86)
+rotation = 0.020317
 
 [node name="TestFloor" type="StaticBody2D" parent="." groups=["terrain"]]
-position = Vector2(0, 3)
-rotation = 0.203226
+position = Vector2(-2, -3)
 collision_layer = 7
 collision_mask = 8
 

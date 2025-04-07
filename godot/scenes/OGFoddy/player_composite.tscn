@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cj70nv213edl2"]
+[gd_scene load_steps=7 format=3 uid="uid://cj70nv213edl2"]
 
 [ext_resource type="Script" path="res://scenes/OGFoddy/player_composite.gd" id="1_8qod2"]
+[ext_resource type="Texture2D" uid="uid://qjk2uapgmgkm" path="res://assets/sPickaxe1.png" id="2_aj32h"]
+[ext_resource type="Texture2D" uid="uid://dksa2gwhehwcb" path="res://assets/guy.png" id="2_unrrr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xvcl0"]
+radius = 7.99891
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ktss2"]
 size = Vector2(20, 1)
@@ -11,6 +14,7 @@ size = Vector2(20, 1)
 size = Vector2(5, 15)
 
 [node name="Player Composite" type="Node2D"]
+scale = Vector2(0.250986, 0.24565)
 script = ExtResource("1_8qod2")
 
 [node name="Player Body" type="RigidBody2D" parent="."]
@@ -18,7 +22,15 @@ can_sleep = false
 lock_rotation = true
 continuous_cd = 2
 
+[node name="Guy" type="Sprite2D" parent="Player Body"]
+position = Vector2(-12, 1)
+rotation = 1.58516
+scale = Vector2(0.639836, 0.645382)
+texture = ExtResource("2_unrrr")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player Body"]
+position = Vector2(-8, -1)
+rotation = -1.55428
 shape = SubResource("CapsuleShape2D_xvcl0")
 
 [node name="PinJoint2D" type="PinJoint2D" parent="Player Body"]
@@ -36,3 +48,9 @@ shape = SubResource("RectangleShape2D_ktss2")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Hammer"]
 position = Vector2(24, 0)
 shape = SubResource("RectangleShape2D_ph6b8")
+
+[node name="SPickaxe1" type="Sprite2D" parent="Hammer"]
+position = Vector2(16.778, 0.00342701)
+rotation = 1.57203
+scale = Vector2(1, 1.34725)
+texture = ExtResource("2_aj32h")

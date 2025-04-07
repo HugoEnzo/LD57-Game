@@ -102,4 +102,5 @@ locale/translations=PackedStringArray("res://i18n/translation.de.translation", "
 
 [rendering]
 
+textures/default_filters/use_nearest_mipmap_filter=true
 environment/defaults/default_clear_color=Color(0.211765, 0.239216, 0.321569, 1)
