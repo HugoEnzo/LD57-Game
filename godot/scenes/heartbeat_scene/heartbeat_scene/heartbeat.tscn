@@ -36,12 +36,12 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Gradient" id="Gradient_yk6ds"]
+[sub_resource type="Gradient" id="Gradient_pn44s"]
 offsets = PackedFloat32Array(0.156098, 0.282927, 0.804878)
 colors = PackedColorArray(1, 1, 1, 1, 0.541353, 0.541353, 0.541353, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_b2nq4"]
-gradient = SubResource("Gradient_yk6ds")
+gradient = SubResource("Gradient_pn44s")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
@@ -70,7 +70,7 @@ script = ExtResource("1_g0uhf")
 process_callback = 0
 
 [node name="HandGrappler" parent="." instance=ExtResource("9_wjsnl")]
-position = Vector2(9.14499, -270.229)
+position = Vector2(11.5516, -271.756)
 
 [node name="BloodVessels" type="Sprite2D" parent="."]
 visible = false

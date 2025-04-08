@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://8i3y03mn4ow"]
+[gd_scene load_steps=9 format=3 uid="uid://8i3y03mn4ow"]
 
 [ext_resource type="Texture2D" uid="uid://blsjelm2hujxq" path="res://assets/image1.png" id="1_r6kvd"]
 [ext_resource type="Script" path="res://scenes/GrappleHand/grapple_controller.gd" id="2_u4463"]
+[ext_resource type="PackedScene" uid="uid://jkr48v7bve1t" path="res://scenes/Terrain_scenes/cave_walls_nutty.tscn" id="3_alkta"]
 [ext_resource type="Texture2D" uid="uid://bugjycgvdpcx8" path="res://assets/kenney_voxel-pack/PNG/Characters/Player male/male_arm.png" id="3_jmgqj"]
 [ext_resource type="Texture2D" uid="uid://cofl4fsrj5ohf" path="res://assets/character/character/character_blue.png" id="4_e5wjh"]
 
@@ -33,6 +34,7 @@ shape = SubResource("RectangleShape2D_s4fsh")
 
 [node name="GrappleController" type="Node2D" parent="Player"]
 script = ExtResource("2_u4463")
+caveCollider = ExtResource("3_alkta")
 
 [node name="RayCast2D" type="RayCast2D" parent="Player/GrappleController"]
 position = Vector2(8, -11)
