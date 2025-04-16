@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cr16cdddcrm2f"]
 
-[ext_resource type="Script" path="res://scenes/crawl_player/crawl_player.gd" id="1_1tyku"]
-[ext_resource type="Script" path="res://scenes/crawl_player/hands.gd" id="2_xkbpl"]
+[ext_resource type="Script" uid="uid://d0kld12ydaxxs" path="res://scenes/crawl_player/crawl_player.gd" id="1_1tyku"]
+[ext_resource type="Script" uid="uid://cwevuou0n1fld" path="res://scenes/crawl_player/hands.gd" id="2_xkbpl"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hkfwv"]
 radius = 7.93068

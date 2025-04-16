@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cj70nv213edl2"]
 
-[ext_resource type="Script" path="res://scenes/OGFoddy/player_composite.gd" id="1_8qod2"]
+[ext_resource type="Script" uid="uid://cposga01667n6" path="res://scenes/OGFoddy/player_composite.gd" id="1_8qod2"]
 [ext_resource type="Texture2D" uid="uid://qjk2uapgmgkm" path="res://assets/sPickaxe1.png" id="2_aj32h"]
 [ext_resource type="Texture2D" uid="uid://dksa2gwhehwcb" path="res://assets/guy.png" id="2_unrrr"]
 

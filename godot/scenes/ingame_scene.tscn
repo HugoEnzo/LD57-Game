@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cik30de5gaaah"]
 
-[ext_resource type="Script" path="res://scenes/ingame_scene.gd" id="1_objyc"]
+[ext_resource type="Script" uid="uid://blotdf3q8oirb" path="res://scenes/ingame_scene.gd" id="1_objyc"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="1_y6ebv"]
 [ext_resource type="PackedScene" uid="uid://jyv4g54adkmo" path="res://ui/overlays/pause_overlay.tscn" id="3_8o178"]
 [ext_resource type="Texture2D" uid="uid://uog7hukay5kj" path="res://assets/Cave Tiles/CaveBG.png" id="4_d75i6"]
