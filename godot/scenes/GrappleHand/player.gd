@@ -1,22 +1,14 @@
-extends CharacterBody2D
+extends RigidBody2D
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
-
-const ACCELERATION = 0.1
-const DECCELERATION = 0.1
 
 func _physics_process(delta: float) -> void:
+	#sprite_flip()
+	pass
 
-	if not is_on_floor():
-		velocity += get_gravity() * delta
 
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
-	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
+func sprite_flip():
+	var mouse_position = get_global_mouse_position()
+	if mouse_position.x > global_position.x:
+		scale.x = -1
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-	move_and_slide()
+		scale.x = 1
